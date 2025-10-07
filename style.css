@@ -8,7 +8,7 @@
   --header-h:64px; --radius:12px; --shadow:0 6px 20px rgba(0,0,0,.06); --shadow-soft:0 4px 14px rgba(0,0,0,.05);
 }
 html,body{height:100%}
-body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.5}
+body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.5;overflow-x:hidden}
 .container{max-width:1200px;margin:0 auto;padding:0 16px}
 .section{padding:56px 0}
 .section.is-tight{padding:36px 0}
@@ -28,12 +28,12 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;lin
 .menu label.hamb{display:none;padding:6px;border-radius:8px}
 .menu label.hamb:active{background:#efe8d9}
 .navbar{display:flex;align-items:center;gap:18px;font-size:15px}
-.navbar a{color:var(--text);padding:8px 10px;border-radius:8px;transition:.25s}
+.navbar a{color:var(--text);padding:8px 10px;border-radius:8px;transition:.25s;text-decoration:none}
 .navbar a:hover{background:#efe8d9;color:#2f2f2f}
 .header{display:flex;align-items:center;min-height:68vh;padding-top:calc(var(--header-h) + 14px)}
 
 /* ===== Botones ===== */
-.btn,button{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px 16px;cursor:pointer;box-shadow:var(--shadow-soft);font-weight:600;transition:.2s}
+.btn,button{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px 16px;cursor:pointer;box-shadow:var(--shadow-soft);font-weight:600;transition:.2s;text-decoration:none}
 .btn:hover,button:hover{background:var(--muted);transform:translateY(-1px);box-shadow:var(--shadow)}
 .btn.outline{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
 .btn.outline:hover{background:#efe8d9}
@@ -60,6 +60,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;lin
 .header-img img{object-fit:contain;max-width:540px;max-height:min(60vh,520px)}
 
 /* ===== Swiper ===== */
+.mySwiper1{overflow:hidden}
 .swiper{margin-top:10px}
 .swiper-slide{padding:0 32px 36px 32px;display:flex;justify-content:center;align-items:center}
 .swiper-button-prev::after,.swiper-button-next::after{font-size:22px}
@@ -80,7 +81,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;lin
 .footer .slogan{font-size:16px;color:#524a3f;margin-top:4px}
 .footer-bottom{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:#6b6b6b;text-align:center}
 
-/* ===== Modal ===== */
+/* ===== Modal (pulido) ===== */
 .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:2000}
 .modal.show{display:flex}
 .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(3px)}
@@ -107,17 +108,17 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;lin
 #form-compra{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 #form-compra .input, #form-compra select, #form-compra textarea{width:100%;background:#fff;color:var(--text);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-family:inherit;font-size:15px}
 #form-compra textarea{min-height:110px}
-#form-compra [name="direccion"], #form-compra [name="notas"], #form-compra input[type="file"], #form-compra button{grid-column:1 / -1}
-#form-compra input[type="file"]{padding:10px 12px;background:#fff;border:1.5px solid var(--line);border-radius:10px}
+#form-compra [name="direccion"], #form-compra [name="notas"], #form-compra input[type="file"]{grid-column:1 / -1}
 .modal-info p.mini{margin-top:10px;background:#fcf8ef;border:1px solid var(--line);padding:10px 12px;border-radius:10px;color:#6a6359}
-#wa-link, #form-compra button{width:100%;text-align:center}
+#wa-link{width:100%;text-align:center}
 
 /* ===== Responsive ===== */
 @media (max-width:992px){
   .grid.cols-3{grid-template-columns:repeat(2,1fr)}
-  .swiper-slide{padding:0 24px 28px}
+  .swiper-slide{padding:0 20px 26px}
 }
 @media (max-width:768px){
+  /* Menú mobile */
   .menu label.hamb{display:block}
   .navbar{display:none;position:absolute;top:var(--header-h);left:12px;right:12px;background:rgba(245,240,230,.98);border:1px solid var(--line);border-radius:12px;padding:12px;flex-direction:column;gap:8px;z-index:1200;box-shadow:var(--shadow)}
   #menu:checked + label + .navbar{display:flex}
@@ -129,6 +130,13 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;lin
   .swiper-button-prev,.swiper-button-next{display:none!important}
   .swiper-pagination-bullet{width:10px;height:10px}
 
+  /* >>> clave para que el carrusel NO bloquee el scroll vertical */
+  .mySwiper1 .swiper-slide,
+  .mySwiper1 .hero,
+  .mySwiper1 .header-img,
+  .mySwiper1 .header-txt { touch-action: pan-y; } /* prioriza desplazamiento vertical */
+
+  .swiper-slide{padding:12px}
   .grid.cols-3{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .logo span{font-size:18px}
@@ -141,20 +149,55 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;lin
   .btn{width:100%}
 }
 
-/* ===== Accesibilidad / anim ===== */
+/* Accesibilidad */
 :focus-visible{outline:3px solid rgba(201,167,106,.35);outline-offset:2px;border-radius:8px}
 
-/* Quitar subrayado del logo y del menú (todas las variantes) */
-.logo, .logo:link, .logo:visited,
-.navbar a, .navbar a:link, .navbar a:visited,
-.navbar a:hover, .navbar a:focus, .navbar a:active {
-  text-decoration: none !important;   /* sin subrayado */
-  background-image: none !important;  /* por si usaba underline con gradient */
-  border-bottom: 0 !important;        /* por si simulaban la línea con borde */
-  box-shadow: none !important;        /* por si había “underline” con shadow */
+/* ===== Fondo como antes (beige) ===== */
+:root{
+  --bg: #F5F0E6;   /* color de antes */
+}
+body{
+  background-color: var(--bg) !important;
+}
+/* Si querés que el header mantenga el mismo tono translúcido */
+.menu{
+  background: rgba(245, 240, 230, 0.92) !important;
+}
+/* Puntitos de Swiper con el mismo beige */
+.swiper-pagination-bullet{
+  background-color: #F5F0E6 !important;
 }
 
-/* Dejo un hover limpio sin subrayado */
-.navbar a:hover { 
-  color: var(--brand);
+/* El contenedor del modal debe poder scrollear */
+.modal-dialog {
+  max-height: 90vh;                 /* no excede pantalla */
+  overflow: auto;                   /* permite scroll interno */
+  -webkit-overflow-scrolling: touch;/* scroll suave en iOS */
+  overscroll-behavior: contain;     /* evita rebotar al body */
+  touch-action: pan-y;              /* prioriza scroll vertical */
+}
+
+/* Asegura que toda el área del modal permita scroll vertical */
+.modal-content,
+.modal-gallery,
+.modal-info {
+  touch-action: pan-y;
+}
+
+/* Imagen principal: altura limitada en móvil */
+@media (max-width: 900px){
+  #mp-img-principal { max-height: 55vh; height: auto; object-fit: contain; }
+}
+
+
+.logo,
+.logo:link,
+.logo:visited,
+.logo:hover,
+.logo:focus,
+.logo:active,
+.logo * {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
 }

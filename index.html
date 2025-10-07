@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>La Cebada 🧉</title>
+  <title>La Cebada</title>
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
@@ -27,7 +27,7 @@
         <img src="images-20251007T004913Z-1-001/images/menu.png" class="menu-icono" alt="Abrir menú" />
       </label>
 
-      <!-- Navbar (sin Preguntas/Quienes) -->
+      <!-- Navbar -->
       <nav class="navbar">
         <a href="#">Inicio</a>
         <a href="#lista-2">Productos</a>
@@ -240,7 +240,7 @@
     </div>
   </footer>
 
-  <!-- ===== MODAL PRODUCTO (sin botón Comprar) ===== -->
+  <!-- ===== MODAL PRODUCTO ===== -->
   <div id="modal-producto" class="modal" aria-hidden="true">
     <div class="modal-backdrop" data-close></div>
 
@@ -287,15 +287,15 @@
 
               <label class="mt-1">Comprobante de pago (imagen o PDF)</label>
               <input class="input" type="file" name="comprobante" accept="image/*,.pdf">
-
-              <button type="submit" class="btn">Enviar pedido</button>
             </form>
 
             <p class="mini mt-2">
               Transferí a <strong>OCA Blue</strong> — <strong>Cuenta 8502869</strong> (Titular: <strong>Gabriel Soldatti Banchero</strong>).<br/>
               Enviá el comprobante y tus datos por WhatsApp:
             </p>
-            <a id="wa-link" class="btn outline" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+
+            <!-- SOLO WhatsApp (sin botón Enviar pedido) -->
+            <a id="wa-link" class="btn" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
           </div>
         </div>
       </div>
