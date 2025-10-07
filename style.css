@@ -201,3 +201,42 @@ body{
   border-bottom: 0 !important;
   box-shadow: none !important;
 }
+
+/* === HERO / SWIPER 1 – FIX MOBILE === */
+@media (max-width: 768px){
+  /* que el contenedor no “empuje” raro */
+  .mySwiper1{ width:100%; overflow:hidden; }
+
+  /* que las slides no se centren ni se achiquen */
+  .mySwiper1 .swiper-wrapper{ align-items: stretch !important; }
+  .mySwiper1 .swiper-slide{
+    display:block !important;
+    width:100% !important;
+    padding: 0 12px 18px !important;   /* menos padding en móvil */
+    box-sizing: border-box;
+  }
+
+  /* el layout del slide va en columna, full width */
+  .hero{ display:block !important; }
+  .header-txt{ margin-bottom: 12px; }
+  .header-img{ margin: 0; }
+
+  /* la imagen nunca desborda ni estira el slide */
+  .header-img img{
+    width:100% !important;
+    height:auto !important;
+    max-height: 48vh;                 /* limita altura en pantallas chicas */
+    object-fit: cover;
+  }
+
+  /* cuando tocás el carrusel, priorizar scroll vertical */
+  .mySwiper1 .swiper-slide,
+  .mySwiper1 .hero,
+  .mySwiper1 .header-img,
+  .mySwiper1 .header-txt{
+    touch-action: pan-y;
+  }
+}
+
+/* por si alguna regla vieja hacía overflow horizontal */
+body{ overflow-x: hidden !important; }

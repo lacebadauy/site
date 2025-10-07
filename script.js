@@ -5,23 +5,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Swipers (con parámetros para no trabar scroll en móvil)
   if (window.Swiper) {
-    new Swiper(".mySwiper1", {
-      loop: true,
-      spaceBetween: 20,
-      autoplay: { delay: 4000 },
-      pagination: { el: ".mySwiper1 .swiper-pagination", clickable: true },
-      navigation: {
-        nextEl: ".mySwiper1 .swiper-button-next",
-        prevEl: ".mySwiper1 .swiper-button-prev",
-      },
-      // >>> importante para móvil
-      touchAngle: 25,                // preferí vertical scroll si el gesto no es casi horizontal
-      touchStartPreventDefault: false,
-      touchReleaseOnEdges: true,
-      threshold: 8,
-      resistanceRatio: 0.85,
-      passiveListeners: true
-    });
+new Swiper(".mySwiper1", {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  autoplay: { delay: 4000 },
+
+  // más robusto en móviles
+  autoHeight: true,
+  centeredSlides: false,
+  watchOverflow: true,
+  observer: true,
+  observeParents: true,
+  resizeObserver: true,
+
+  // no bloquear scroll vertical
+  touchAngle: 30,
+  threshold: 8,
+  touchStartPreventDefault: false,
+  touchReleaseOnEdges: true,
+  passiveListeners: true,
+
+  pagination: { el: ".mySwiper1 .swiper-pagination", clickable: true },
+  navigation: {
+    nextEl: ".mySwiper1 .swiper-button-next",
+    prevEl: ".mySwiper1 .swiper-button-prev",
+  },
+});
+
 
     new Swiper(".mySwiper2", {
       loop: true,
