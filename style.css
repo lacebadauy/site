@@ -1,0 +1,160 @@
+/* ===== Fuente ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+/* ===== Reset & Base ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F5F0E6; --text:#3A3A3A; --brand:#6B4E2E; --accent:#C9A76A; --line:#E2DACB; --muted:#8A704E;
+  --header-h:64px; --radius:12px; --shadow:0 6px 20px rgba(0,0,0,.06); --shadow-soft:0 4px 14px rgba(0,0,0,.05);
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.5}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.section{padding:56px 0}
+.section.is-tight{padding:36px 0}
+.section-title{font-size:clamp(22px,2.6vw,30px);font-weight:800;color:var(--brand);margin-bottom:16px}
+
+/* ===== Header / Navbar ===== */
+.menu{
+  position:absolute;top:0;left:0;right:0;height:var(--header-h);z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;padding:0 12px;
+  background:rgba(245,240,230,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)
+}
+.logo{display:flex;align-items:center;gap:8px;text-transform:uppercase;font-weight:800;letter-spacing:.4px}
+.logo img{width:clamp(22px,3vw,28px);height:clamp(22px,3vw,28px);object-fit:contain;border-radius:50%}
+.logo span{font-size:clamp(18px,2.1vw,20px);color:var(--brand)}
+#menu{display:none}
+.menu-icono{width:26px}
+.menu label.hamb{display:none;padding:6px;border-radius:8px}
+.menu label.hamb:active{background:#efe8d9}
+.navbar{display:flex;align-items:center;gap:18px;font-size:15px}
+.navbar a{color:var(--text);padding:8px 10px;border-radius:8px;transition:.25s}
+.navbar a:hover{background:#efe8d9;color:#2f2f2f}
+.header{display:flex;align-items:center;min-height:68vh;padding-top:calc(var(--header-h) + 14px)}
+
+/* ===== Botones ===== */
+.btn,button{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px 16px;cursor:pointer;box-shadow:var(--shadow-soft);font-weight:600;transition:.2s}
+.btn:hover,button:hover{background:var(--muted);transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn.outline{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.btn.outline:hover{background:#efe8d9}
+
+/* ===== Grids & Cards ===== */
+.grid{display:grid;gap:24px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-soft);overflow:hidden;display:flex;flex-direction:column;height:100%}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-body .btn{margin-top:auto}
+
+/* ===== Imágenes con bordes redondeados en TODOS los carruseles/cards ===== */
+.header-img img,
+.mySwiper1 .swiper-slide img,
+.mySwiper2 .swiper-slide img,
+.card > img,
+.product-card > img,
+.promos .card > img{
+  border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);
+  padding:10px;object-fit:cover;width:100%
+}
+.product-card > img{height:220px}
+.header-img img{object-fit:contain;max-width:540px;max-height:min(60vh,520px)}
+
+/* ===== Swiper ===== */
+.swiper{margin-top:10px}
+.swiper-slide{padding:0 32px 36px 32px;display:flex;justify-content:center;align-items:center}
+.swiper-button-prev::after,.swiper-button-next::after{font-size:22px}
+.swiper-button-prev,.swiper-button-next{color:burlywood}
+.swiper-pagination-bullet{background:var(--bg);opacity:1}
+.swiper-pagination-bullet-active{background:var(--brand)}
+
+/* ===== Hero ===== */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}
+.hero-title{font-size:clamp(26px,4vw,44px);font-weight:800;color:var(--brand);line-height:1.1;margin-bottom:10px}
+.hero-text{font-size:15px;color:#555;margin-bottom:18px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid var(--line);background:#fcf8ef;padding:32px 0;margin-top:36px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+.footer h4{color:var(--brand);font-size:16px;margin-bottom:8px}
+.footer .slogan{font-size:16px;color:#524a3f;margin-top:4px}
+.footer-bottom{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:#6b6b6b;text-align:center}
+
+/* ===== Modal ===== */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:2000}
+.modal.show{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(3px)}
+.modal-dialog{position:relative;background:#fff;border-radius:12px;padding:18px;max-width:960px;width:95%;z-index:2100;box-shadow:0 10px 30px rgba(0,0,0,.3);display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+.modal-close{position:absolute;top:8px;right:12px;background:none;border:none;font-size:24px;cursor:pointer;color:#555}
+
+.modal-gallery{display:flex;flex-direction:column;gap:8px}
+#mp-img-principal{height:380px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}
+.thumbs img{height:70px;cursor:pointer;border-radius:10px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.thumbs img.active{border:2px solid var(--brand)}
+
+.modal-info h3{font-size:22px;font-weight:800;color:var(--brand);margin:4px 0}
+.modal-info p{color:#504940}
+.modal-price{display:inline-block;margin:6px 0 10px;padding:6px 10px;border-radius:10px;background:#efe8d9;color:var(--brand);font-weight:800}
+
+.bank{margin:8px 0 12px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fcf8ef}
+.bank li{display:flex;gap:8px;margin:6px 0}
+.bank li strong{width:120px;color:#3d3428}
+#copiar-datos{margin:10px 0 16px}
+
+#compra-info h4{margin:12px 0 8px;color:var(--brand)}
+/* Form 2 columnas (1 en móvil) */
+#form-compra{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#form-compra .input, #form-compra select, #form-compra textarea{width:100%;background:#fff;color:var(--text);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-family:inherit;font-size:15px}
+#form-compra textarea{min-height:110px}
+#form-compra [name="direccion"], #form-compra [name="notas"], #form-compra input[type="file"], #form-compra button{grid-column:1 / -1}
+#form-compra input[type="file"]{padding:10px 12px;background:#fff;border:1.5px solid var(--line);border-radius:10px}
+.modal-info p.mini{margin-top:10px;background:#fcf8ef;border:1px solid var(--line);padding:10px 12px;border-radius:10px;color:#6a6359}
+#wa-link, #form-compra button{width:100%;text-align:center}
+
+/* ===== Responsive ===== */
+@media (max-width:992px){
+  .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  .swiper-slide{padding:0 24px 28px}
+}
+@media (max-width:768px){
+  .menu label.hamb{display:block}
+  .navbar{display:none;position:absolute;top:var(--header-h);left:12px;right:12px;background:rgba(245,240,230,.98);border:1px solid var(--line);border-radius:12px;padding:12px;flex-direction:column;gap:8px;z-index:1200;box-shadow:var(--shadow)}
+  #menu:checked + label + .navbar{display:flex}
+  .navbar a{padding:12px;border-radius:10px}
+  .navbar a:hover{background:#efe8d9}
+
+  .header{min-height:58vh}
+  .hero{grid-template-columns:1fr}
+  .swiper-button-prev,.swiper-button-next{display:none!important}
+  .swiper-pagination-bullet{width:10px;height:10px}
+
+  .grid.cols-3{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .logo span{font-size:18px}
+}
+@media (max-width:900px){
+  .modal-dialog{grid-template-columns:1fr;width:95%}
+  #mp-img-principal{height:260px}
+}
+@media (max-width:480px){
+  .btn{width:100%}
+}
+
+/* ===== Accesibilidad / anim ===== */
+:focus-visible{outline:3px solid rgba(201,167,106,.35);outline-offset:2px;border-radius:8px}
+
+/* Quitar subrayado del logo y del menú (todas las variantes) */
+.logo, .logo:link, .logo:visited,
+.navbar a, .navbar a:link, .navbar a:visited,
+.navbar a:hover, .navbar a:focus, .navbar a:active {
+  text-decoration: none !important;   /* sin subrayado */
+  background-image: none !important;  /* por si usaba underline con gradient */
+  border-bottom: 0 !important;        /* por si simulaban la línea con borde */
+  box-shadow: none !important;        /* por si había “underline” con shadow */
+}
+
+/* Dejo un hover limpio sin subrayado */
+.navbar a:hover { 
+  color: var(--brand);
+}
