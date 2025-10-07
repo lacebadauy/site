@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Cebada 🧉</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="menu container">
+      <!-- Logo + texto -->
+      <a href="#" class="logo">
+        <img src="images-20251007T004913Z-1-001/images/logo.png" alt="La Cebada" />
+        <span>La Cebada</span>
+      </a>
+
+      <!-- Menú Mobile -->
+      <input type="checkbox" id="menu" />
+      <label for="menu" class="hamb">
+        <img src="images-20251007T004913Z-1-001/images/menu.png" class="menu-icono" alt="Abrir menú" />
+      </label>
+
+      <!-- Navbar (sin Preguntas/Quienes) -->
+      <nav class="navbar">
+        <a href="#">Inicio</a>
+        <a href="#lista-2">Productos</a>
+        <a href="#lista-1">Promociones</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+
+    <!-- HERO / SLIDER PRINCIPAL -->
+    <div class="header-content container section is-tight">
+      <div class="swiper mySwiper1">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="hero">
+              <div class="header-txt">
+                <h1 class="hero-title">Mate Camionero sin Virola</h1>
+                <p class="hero-text">Hecho a mano, curado y listo para tu ritual de todos los días.</p>
+                <div class="hero-cta">
+                  <a href="#" class="btn ver-producto" data-id="1">Ver producto</a>
+                  <a href="#lista-2" class="btn outline">Ver todos</a>
+                </div>
+              </div>
+              <div class="header-img">
+                <img src="images-20251007T004913Z-1-001/images/camionero sin.jpeg" alt="Mate Camionero sin Virola" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="hero">
+              <div class="header-txt">
+                <h1 class="hero-title">Mate Pulido</h1>
+                <p class="hero-text">Terminación pulida para un estilo clásico y elegante.</p>
+                <div class="hero-cta">
+                  <a href="#" class="btn ver-producto" data-id="2">Ver producto</a>
+                  <a href="#lista-2" class="btn outline">Ver todos</a>
+                </div>
+              </div>
+              <div class="header-img">
+                <img src="images-20251007T004913Z-1-001/images/WhatsApp Image 2025-10-06 at 21.51.47.jpeg" alt="Mate Pulido" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="hero">
+              <div class="header-txt">
+                <h1 class="hero-title">Mate Torpedo con Virola</h1>
+                <p class="hero-text">Formato torpedo, cómodo y con virola para mayor durabilidad.</p>
+                <div class="hero-cta">
+                  <a href="#" class="btn ver-producto" data-id="3">Ver producto</a>
+                  <a href="#lista-2" class="btn outline">Ver todos</a>
+                </div>
+              </div>
+              <div class="header-img">
+                <img src="images-20251007T004913Z-1-001/images/WhatsApp Image 2025-10-06 at 21.51.47 (1).jpeg" alt="Mate Torpedo con Virola" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Controles -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========= PRODUCTOS (PRIMERO) ========= -->
+    <section class="products container section" id="lista-2">
+      <h2 class="section-title">Nuestros Productos</h2>
+
+      <div class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+
+          <!-- Producto 1 -->
+          <div class="swiper-slide">
+            <article class="card product-card" data-id="1">
+              <img src="images-20251007T004913Z-1-001/images/camionero sin.jpeg" alt="Camionero Sin Virola + Posa Mate" />
+              <div class="card-body product-txt">
+                <h3>Mate Camionero Sin Virola + Posa Mate</h3>
+                <p>100% Artesanal</p>
+                <p class="price">$760</p>
+                <a href="#" class="btn ver-producto" data-id="1">Ver producto</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Producto 2 -->
+          <div class="swiper-slide">
+            <article class="card product-card" data-id="2">
+              <img src="images-20251007T004913Z-1-001/images/p1.jpeg" alt="Mate Pulido + Posa Mate" />
+              <div class="card-body product-txt">
+                <h3>Mate Pulido + Posa Mate</h3>
+                <p>100% Artesanal</p>
+                <p class="price">$760</p>
+                <a href="#" class="btn ver-producto" data-id="2">Ver producto</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Producto 3 -->
+          <div class="swiper-slide">
+            <article class="card product-card" data-id="3">
+              <img src="images-20251007T004913Z-1-001/images/p3.jpeg" alt="Camionero Con Virola + Posa Mate" />
+              <div class="card-body product-txt">
+                <h3>Mate Camionero Con Virola + Posa Mate</h3>
+                <p>100% Artesanal</p>
+                <p class="price">$830</p>
+                <a href="#" class="btn ver-producto" data-id="3">Ver producto</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Producto 4 -->
+          <div class="swiper-slide">
+            <article class="card product-card" data-id="7">
+              <img src="images-20251007T004913Z-1-001/images/p2.jpeg" alt="Torpedo con Virola + Posa Mate" />
+              <div class="card-body product-txt">
+                <h3>Mate Torpedo con Virola + Posa Mate</h3>
+                <p>100% Artesanal</p>
+                <p class="price">$830</p>
+                <a href="#" class="btn ver-producto" data-id="7">Ver producto</a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Controles -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ========= PROMOCIONES (DESPUÉS) ========= -->
+    <section class="promos container section" id="lista-1">
+      <h2 class="section-title">Promociones</h2>
+
+      <div class="grid cols-3">
+        <!-- Promo 1 -->
+        <article class="card product-card" data-id="4">
+          <img src="images-20251007T004913Z-1-001/images/WhatsApp Image 2025-10-06 at 21.50.49.jpeg" alt="Promo 1 - Dos mates sin virola" />
+          <div class="card-body">
+            <h3>Promo 1: Dos Mates sin Virola</h3>
+            <p class="badge">100% artesanal</p>
+            <div class="price"><span class="precio">$1540</span></div>
+            <a href="#" class="btn ver-producto" data-id="4">Ver producto</a>
+          </div>
+        </article>
+
+        <!-- Promo 2 -->
+        <article class="card product-card" data-id="5">
+          <img src="images-20251007T004913Z-1-001/images/promo3.jpeg" alt="Promo 2 - Dos mates con virola" />
+          <div class="card-body">
+            <h3>Promo 2: Dos Mates con Virola</h3>
+            <p class="badge">100% artesanal</p>
+            <div class="price"><span class="precio">$1660</span></div>
+            <a href="#" class="btn ver-producto" data-id="5">Ver producto</a>
+          </div>
+        </article>
+
+        <!-- Promo 3 -->
+        <article class="card product-card" data-id="6">
+          <img src="images-20251007T004913Z-1-001/images/promo2.jpeg" alt="Promo 3 - Sin virola + con virola" />
+          <div class="card-body">
+            <h3>Promo 3: Sin Virola + Con Virola</h3>
+            <p class="badge">100% artesanal</p>
+            <div class="price"><span class="precio">$1490</span></div>
+            <a href="#" class="btn ver-producto" data-id="6">Ver producto</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>La Cebada</h4>
+        <p class="slogan">El ritual de todos los días</p>
+      </div>
+
+      <div id="contacto">
+        <h4>Contacto</h4>
+        <p>Escribinos para mayoristas o personalizaciones.</p>
+        <form class="form">
+          <input class="input" type="text" placeholder="Nombre" />
+          <input class="input" type="email" placeholder="Email" />
+          <textarea class="input" placeholder="Mensaje"></textarea>
+          <button class="btn" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      © <span id="year"></span> La Cebada — Todos los derechos reservados
+    </div>
+  </footer>
+
+  <!-- ===== MODAL PRODUCTO (sin botón Comprar) ===== -->
+  <div id="modal-producto" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+
+    <div class="modal-dialog">
+      <button class="modal-close" data-close aria-label="Cerrar">×</button>
+
+      <div class="modal-content">
+        <div class="modal-gallery">
+          <img id="mp-img-principal" src="" alt="Imagen principal del producto">
+          <div id="mp-thumbs" class="thumbs"></div>
+        </div>
+
+        <div class="modal-info">
+          <h3 id="mp-nombre"></h3>
+          <p id="mp-desc"></p>
+          <p class="modal-price" id="mp-precio"></p>
+
+          <!-- Instrucciones de compra -->
+          <div id="compra-info" class="compra">
+            <h4>Datos para transferencia</h4>
+            <ul class="bank">
+              <li><strong>Banco:</strong> <span id="bank-nombre"></span></li>
+              <li><strong>N° de cuenta:</strong> <span id="bank-cuenta"></span></li>
+              <li><strong>Tipo:</strong> <span id="bank-tipo"></span></li>
+              <li><strong>Titular:</strong> <span id="bank-titular"></span></li>
+              <li><strong>CI:</strong> <span id="bank-ci"></span></li>
+            </ul>
+            <button id="copiar-datos" class="btn outline">Copiar datos bancarios</button>
+
+            <h4 class="mt-2">Envío / Retiro</h4>
+            <form id="form-compra" class="form">
+              <input class="input" type="text" name="nombre" placeholder="Nombre y apellido" required>
+              <input class="input" type="email" name="email" placeholder="Email" required>
+              <input class="input" type="tel" name="telefono" placeholder="Teléfono" required>
+
+              <select class="input" name="metodo" required>
+                <option value="" disabled selected>Seleccioná una opción</option>
+                <option value="envio">Envío por DAC</option>
+                <option value="retiro">Retiro en punto de encuentro</option>
+              </select>
+
+              <input class="input" type="text" name="direccion" placeholder="Dirección (si elegís envío)">
+              <textarea class="input" name="notas" placeholder="Notas (color, personalización, horario, etc.)"></textarea>
+
+              <label class="mt-1">Comprobante de pago (imagen o PDF)</label>
+              <input class="input" type="file" name="comprobante" accept="image/*,.pdf">
+
+              <button type="submit" class="btn">Enviar pedido</button>
+            </form>
+
+            <p class="mini mt-2">
+              Transferí a <strong>OCA Blue</strong> — <strong>Cuenta 8502869</strong> (Titular: <strong>Gabriel Soldatti Banchero</strong>).<br/>
+              Enviá el comprobante y tus datos por WhatsApp:
+            </p>
+            <a id="wa-link" class="btn outline" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ===== FIN MODAL ===== -->
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
